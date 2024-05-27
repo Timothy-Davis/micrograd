@@ -9,11 +9,12 @@ class Neuron:
 
     def __call__(self, x):
         activation = sum((wi * xi for wi, xi in zip(self.w, x)), self.b)
-        out = activation.tanh_test()
+        out = activation.tanh()
         return out
 
     def parameters(self):
         return self.w + [self.b]
+
 
 class Layer:
     def __init__(self, inputs, outputs):
@@ -30,7 +31,7 @@ class Layer:
 class MLP:
     def __init__(self, inputs, outputs):
         sz = [inputs] + outputs
-        self.layers = [Layer(sz[i], sz[i+1]) for i in range(len(outputs))]
+        self.layers = [Layer(sz[i], sz[i + 1]) for i in range(len(outputs))]
 
     def __call__(self, x):
         for layer in self.layers:
@@ -57,7 +58,7 @@ if __name__ == '__main__':
     for i in range(20):
         # forward pass
         ypred = [n(x) for x in xs]
-        loss = sum((yout - ygt)**2 for ygt, yout in zip(ys, ypred))
+        loss = sum((yout - ygt) ** 2 for ygt, yout in zip(ys, ypred))
 
         # backward pass
         loss.backward()

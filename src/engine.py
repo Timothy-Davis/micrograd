@@ -77,9 +77,8 @@ class Value:
         out._backward = _backward
         return out
 
-    def tanh_test(self):
-        try: return ((2*self).exp() - 1) / ((2 * self).exp() + 1)
-        except OverflowError: print(self.data, self.grad)
+    def tanh(self):
+        return ((2*self).exp() - 1) / ((2 * self).exp() + 1)
 
     def exp(self):
         out = Value(math.exp(self.data), (self,), 'exp')
