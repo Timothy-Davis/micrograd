@@ -23,6 +23,9 @@ class Value:
         out._backward = _backward
         return out
 
+    def __radd__(self, other):
+        return self + other
+
     def __mul__(self, other):
         other = other if isinstance(other, Value) else Value(other)
         out = Value(self.data * other.data, (self, other), '*')
@@ -39,10 +42,10 @@ class Value:
 
     def __pow__(self, other):
         assert isinstance(other, (int, float)), "Only supports int and float"
-        out = Value(self.data ** other, (self, other), f'**{other}')
+        out = Value(self.data ** other, (self, ), f'**{other}')
 
         def _backward():
-            self.grad += ((self.data * other) ** (other - 1)) * out.grad
+            self.grad += other * self.data**(other - 1) * out.grad
 
         out._backward = _backward
         return out
@@ -57,13 +60,26 @@ class Value:
         return self * -1
 
     def relu(self):
-        out = Value(0 if self.data < 0 else self.data, (self,), "relu")
+        out = Value(0 if self.data < 0 else self.data, (self, ), 'relu')
 
         def _backward():
-            self.grad += (out.data > 0) * out.grad
+            self.grad += (self.data > 0) * out.grad
 
         out._backward = _backward
         return out
+
+    def leaky_relu(self):
+        out = Value(0.01*self.data if self.data < 0 else self.data, (self,), "leaky relu")
+
+        def _backward():
+            self.grad += (0.01 * out.grad if self.data < 0 else out.grad)
+
+        out._backward = _backward
+        return out
+
+    def tanh_test(self):
+        try: return ((2*self).exp() - 1) / ((2 * self).exp() + 1)
+        except OverflowError: print(self.data, self.grad)
 
     def exp(self):
         out = Value(math.exp(self.data), (self,), 'exp')

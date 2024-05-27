@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3b372df-3685-4380-bb8e-f9033cf51983" name="Changes" comment="implemented back-propagation supporting only addition and multiplication &#10;(for now ;))">
+      <change beforePath="$PROJECT_DIR$/.idea/micrograd.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/micrograd.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/nn.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/nn.py" afterDir="false" />
@@ -55,6 +56,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -91,8 +93,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-PY-241.14494.241" />
-        <option value="bundled-python-sdk-0509580d9d50-28c9f5db9ffe-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.14494.241" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-PY-241.15989.155" />
+        <option value="bundled-python-sdk-babbdf50b680-7c6932dee5e4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.15989.155" />
       </set>
     </attachedChunks>
   </component>
@@ -106,6 +108,7 @@
       <updated>1716759175493</updated>
       <workItem from="1716759176859" duration="1772000" />
       <workItem from="1716760968612" duration="9601000" />
+      <workItem from="1716780492582" duration="6417000" />
     </task>
     <task id="LOCAL-00001" summary="Added functionality for creating simple mathematical expressions.&#10;Implementation will be tree based so we can remember what operations/data values created the final output. This will be necessary for us to properly back-propagate through the function.">
       <option name="closed" value="true" />
@@ -135,14 +138,36 @@
     <option name="LAST_COMMIT_MESSAGE" value="implemented back-propagation supporting only addition and multiplication &#10;(for now ;))" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/engine.py</url>
+          <line>81</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="topo[2]" />
         <watch expression="topo[4]" />
+        <watch expression="n.layers[1]" />
+        <watch expression="self._prev" />
+        <watch expression="self._prev" />
+        <watch expression="self._prev._prev._prev._prev._prev._prev._prev._prev._prev._prev._prev" language="Python" />
+        <watch expression="loss" language="Python" />
+        <watch expression="self._prev._prev" />
       </configuration>
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/micrograd$nn.coverage" NAME="nn Coverage Results" MODIFIED="1716780259212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/micrograd$nn.coverage" NAME="nn Coverage Results" MODIFIED="1716786567913" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>
