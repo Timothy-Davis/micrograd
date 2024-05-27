@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3b372df-3685-4380-bb8e-f9033cf51983" name="Changes" comment="Added functionality for creating simple mathematical expressions.&#10;Implementation will be tree based so we can remember what operations/data values created the final output. This will be necessary for us to properly back-propagate through the function.">
+    <list default="true" id="a3b372df-3685-4380-bb8e-f9033cf51983" name="Changes" comment="implemented back-propagation supporting only addition and multiplication &#10;(for now ;))">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/nn.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/nn.py" afterDir="false" />
@@ -105,7 +105,7 @@
       <option name="presentableId" value="Default" />
       <updated>1716759175493</updated>
       <workItem from="1716759176859" duration="1772000" />
-      <workItem from="1716760968612" duration="4677000" />
+      <workItem from="1716760968612" duration="9601000" />
     </task>
     <task id="LOCAL-00001" summary="Added functionality for creating simple mathematical expressions.&#10;Implementation will be tree based so we can remember what operations/data values created the final output. This will be necessary for us to properly back-propagate through the function.">
       <option name="closed" value="true" />
@@ -115,7 +115,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716763066730</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="implemented back-propagation supporting only addition and multiplication &#10;(for now ;))">
+      <option name="closed" value="true" />
+      <created>1716765807488</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1716765807488</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,9 +131,18 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added functionality for creating simple mathematical expressions.&#10;Implementation will be tree based so we can remember what operations/data values created the final output. This will be necessary for us to properly back-propagate through the function." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added functionality for creating simple mathematical expressions.&#10;Implementation will be tree based so we can remember what operations/data values created the final output. This will be necessary for us to properly back-propagate through the function." />
+    <MESSAGE value="implemented back-propagation supporting only addition and multiplication &#10;(for now ;))" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented back-propagation supporting only addition and multiplication &#10;(for now ;))" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="topo[2]" />
+        <watch expression="topo[4]" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/micrograd$nn.coverage" NAME="nn Coverage Results" MODIFIED="1716765200698" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/micrograd$nn.coverage" NAME="nn Coverage Results" MODIFIED="1716780259212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>
